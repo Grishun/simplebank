@@ -20,7 +20,7 @@ CREATE TABLE "transfers"
     "id"          bigserial PRIMARY KEY,
     "from_acc_id" bigint      NOT NULL,
     "to_acc_id"   bigint      NOT NULL,
-    "amount"      bigint      NOT NULL,
+    "amount"      bigint      NOT NULL CHECK (amount > 0),
     "created_at"  timestamptz NOT NULL DEFAULT (now())
 );
 
