@@ -22,10 +22,10 @@ newmigrate:
 	 migrate create -ext sql -dir db/migration -seq $(MIGRATION_NAME)
 
 migrateup:
-	 migrate -path /Users/grishu/simplebank/db/migration -database "postgresql://root:1337@127.0.0.1:5433/simple_bank?sslmode=disable" -verbose up $(MIGRATE_VERSION)
+	 migrate -path ./db/migration -database "postgresql://root:1337@127.0.0.1:5433/simple_bank?sslmode=disable" -verbose up $(MIGRATE_VERSION)
 
 migratedown:
-	 migrate -path /Users/grishu/simplebank/db/migration -database "postgresql://root:1337@127.0.0.1:5433/simple_bank?sslmode=disable" -verbose down $(MIGRATE_VERSION)
+	 migrate -path ./db/migration -database "postgresql://root:1337@127.0.0.1:5433/simple_bank?sslmode=disable" -verbose down $(MIGRATE_VERSION)
 
 sqlc:
 	sqlc generate
